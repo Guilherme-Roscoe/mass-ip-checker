@@ -35,10 +35,8 @@ Este é um **scanner de DNSBL** (Blacklists) para verificar se um endereço IP e
 
 ## 🚀 Rodando o Programa
 
-### 1️⃣ Criar a pasta do projeto
+✅ 3️⃣ Instalar dependências
 
-Abra o terminal ou PowerShell e crie um diretório para o projeto:
+Dentro da pasta do projeto:
 
-```bash
-mkdir dnsbl_scanner
-cd dnsbl_scanner
+` pip install dnspython fastapi uvicorn `
