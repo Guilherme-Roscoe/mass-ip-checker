@@ -38,7 +38,7 @@ Este é um **scanner de DNSBL** (Blacklists) para verificar se um endereço IP e
    - `dnspython` — Para realizar consultas DNS.
    - `fastapi` e `uvicorn` — Para API REST e servidor web.
   
-   ####⬇️📦 Instalação das Dependências
+   #### ⬇️📦 Instalação das Dependências
    Entre na pasta do projeto e execute:
 
    `pip install dnspython fastapi uvicorn`
@@ -61,7 +61,7 @@ Você também pode exportar os resultados para CSV ou JSON:
 `python cli.py 154.6.126.49 --csv resultado.csv --json resultado.json`
 
 ---
-####2 Modo API REST
+#### 2 Modo API REST
 
 Para rodar a API REST, execute:
 
@@ -73,7 +73,7 @@ Acesse a API através de:
 `http://localhost:8000/scan/154.6.126.49`
 
 ---
-###3 Modo Interface Web
+#### 3 Modo Interface Web
 
 Para rodar a interface Web simples, execute:
 
@@ -86,7 +86,7 @@ Abra no navegador em:
 
 Digite o IP e clique Verificar.
 
-###⚙️ Como Funciona
+### ⚙️ Como Funciona
 
 Consultas DNS: O programa consulta uma série de listas negras (DNSBLs) para verificar se o IP está listado.
 
@@ -103,12 +103,12 @@ Classificação de Risco: O risco é classificado de acordo com o número de lis
 Exportação: Você pode exportar os resultados da verificação em CSV ou JSON.
 
 ---
-###🧑‍💻 Contribuições
+### 🧑‍💻 Contribuições
 
 Se você quiser contribuir com o projeto, fique à vontade para criar uma pull request! Sugestões de melhorias são sempre bem-vindas.
 
 ---
-###🧯 Problemas Comuns
+### 🧯 Problemas Comuns
 
 ❌ ModuleNotFoundError: dns
 
@@ -121,7 +121,7 @@ Isso significa que a biblioteca dnspython não está instalada. Para corrigir, e
 É normal que algumas listas negras tenham tempo de resposta alto ou até bloqueiem consultas. Isso pode ocorrer com listas populares como Spamhaus, por exemplo.
 
 ---
-###🎁 Melhorias Futuras
+### 🎁 Melhorias Futuras
 
  - Dockerização do projeto
 
