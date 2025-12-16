@@ -21,11 +21,11 @@ cd dnsbl_scanner`
 ## 📦 Baixando pré-requisitos
 
 1. **Python 3.x**: O código foi desenvolvido para Python 3.10+, então, por favor, instale a versão mais recente do Python.
-2. **Instalar dependências**:
+2. **⬇️📦 Instalação das Dependências**:
    - `dnspython` — Para realizar consultas DNS.
    - `fastapi` e `uvicorn` — Para API REST e servidor web.
   
-   #### ⬇️📦 Instalação das Dependências
+   
    Entre na pasta do projeto e execute:
 
    `pip install dnspython fastapi uvicorn`
