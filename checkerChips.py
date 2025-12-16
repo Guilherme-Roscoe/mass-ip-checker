@@ -43,6 +43,6 @@ for ip in ip_list:
 fim = time.time()
 
 tempo_execucao = fim - inicio
-print(f"Checking is over\n Execution time: {tempo_execucao:.2f} sec\n")
+print(f"Checking is over\nChecked Addresses:{len(ip_list)}\nExecution time: {tempo_execucao:.2f} sec\n")
 
 print("The following IP addresses were not found on any blacklist:\n", '\n'.join(ip_limpos), "\n--------\n")
