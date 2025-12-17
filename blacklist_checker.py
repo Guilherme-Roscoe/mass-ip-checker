@@ -117,7 +117,8 @@ async def scan_ip(ip):
         "ip": ip,
         "listed_count": len(listed),
         "risk": risk_level(len(listed)),
-        "results": results
+        "results": results,
+        "listed_rbl": listed
     }
 
 def export_csv(data, filename):
