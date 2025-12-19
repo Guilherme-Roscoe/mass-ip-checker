@@ -12,7 +12,7 @@ ip_list = ip_list_text.splitlines()
 
 #List to separe clean IP
 ip_limpos = []
-todos_ip = {}
+todos_ip = []
 
 inicio = time.time() #calc exec time
 
@@ -44,22 +44,37 @@ for ip in ip_list:
     #for r in data["results"]:
     #    print(f"{r['blacklist']:45} {r['status']:12} {r['time']}s")
 
-    listadas = [ l['blacklist'] for l in data['listed_rbl']]
+    listadas = [ l['blacklist'] for l in data['listed_rbl']] #name of RBLs found
+
+    ip_info = {
+        "ip": ip,
+        "rbl_n": data['listed_count'],
+        "risco": data["risk"],
+        "listas": listadas
+    }
+    todos_ip.append(ip_info)
 
     #register clean IP addresses
     if int(data['listed_count']) == 0:
-        ip_limpos.append(ip)
+        ip_limpos.append(ip_info)
 
     console.print(f"[bold green]IP: {data['ip']}\nRisco: {data['risk']}\nListagens: {data['listed_count']}[/bold green][bold red]\n{' | '.join(listadas)}\n\n[/bold red]")
 
 fim = time.time()
 tempo_exec = fim - inicio
 if len(ip_list) > 1:
-    console.print(f"[bold green]Checked addresses: {len(ip_list)}\nClean IP addresses: {len(ip_limpos)}\nExecution time: {tempo_exec:.2f}[/bold green]")
+    console.print(f"[bold green]Execution time: {tempo_exec:.2f}\nChecked addresses: {len(ip_list)}\nClean IP addresses: {len(ip_limpos)}[/bold green]")
 
-resultado_text = Text(f"{'IP ADDRESS':40} {'BLACKLISTS COUNT':12} ")
-for ipr in ip_list:
-    resultado_text.append(f"{ipr:40} {}")
+resultado_text = Text(f"\n{'IP ADDRESS':45} {'BLACKLISTS COUNT':30} {'RBLs LISTED':10}\n",style="magenta")
+for ipr in todos_ip:
+    if int(ipr["rbl_n"]) < 4:
+        resultado_text.append(f"{ipr["ip"]:45} {ipr["rbl_n"]:10} {"lista.tal.spam.sla":10}", style="green")
 
+infos_result = Panel(
+    resultado_text,
+    title="DONUT RESULT",
+    border_style="magenta"
+)
+console.print(infos_result)
 
 # CLOCAR INFOS SOBRE CADA IP NA LISTA todos_ips PARA O LOG FINAL
