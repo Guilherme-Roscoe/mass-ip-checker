@@ -1,9 +1,34 @@
-import asyncio
-import dns.asyncresolver
-import dns.resolver
-import time
 import csv
 import json
+import time
+import string
+import asyncio
+import dns.resolver
+import dns.asyncresolver
+from rich.text import Text
+
+def donut_print(console):
+    donut = open("donuts.txt","r").read()
+    color_map = {
+        "M": "pink1",
+        "+": "deep_pink3",
+        "-": "hot_pink",
+        ":": "magenta",
+        ".": "grey50",
+    }
+    letras = list(string.ascii_letters)
+    for letra in letras:
+        color_map[letra] = "pink3"
+
+    donut_text = Text()
+
+    for char in donut:
+        if char == "\n":
+            donut_text.append(char)
+        else:
+            style = color_map.get(char, "default")
+            donut_text.append(char, style=style)
+    console.print(donut_text)
 
 BLACKLISTS = [
     "b.barracudacentral.org",
