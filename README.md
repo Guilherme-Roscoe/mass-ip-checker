@@ -2,14 +2,14 @@
 
 #### Python application for bulk checking if IPs are on a blacklist.
 ---
-This is a **DNSBL (Blacklist) scanner** to check if an IP address is listed on various blacklists. The program can be run in several ways, including a **professional CLI**, a **REST API**, and a simple **web interface**. The system also allows **exporting results in CSV or JSON format** and classifies the risk according to the number of lists in which the IP was found.
+  This is a **DNSBL (Blacklist) scanner** to check if an IP address is listed on various blacklists. The program can be run in several ways, including a **professional CLI**, a **REST API**, and a simple **web interface**. The system also allows **exporting results in CSV or JSON format** and classifies the risk according to the number of lists in which the IP was found.
 
-- ⚡ Asynchronous (fast) execution
-- 🖥️ Professional CLI
-- 🌐 REST API (FastAPI)
-- 🧾 Simple web interface
-- 📄 CSV and JSON export
-- 🧠 Automatic risk classification
+  - ⚡ Asynchronous (fast) execution
+  - 🖥️ Professional CLI
+  - 🌐 REST API (FastAPI)
+  - 🧾 Simple web interface
+  - 📄 CSV and JSON export
+  - 🧠 Automatic risk classification
   
 ---
 ## 📂 Create the project folder
@@ -22,49 +22,49 @@ Open the terminal or PowerShell and create a directory for the project:
 ---
 ## 📦 Baixando pré-requisitos
 
-1. **Python 3.x**: O código foi desenvolvido para Python 3.10+, então, por favor, instale a versão mais recente do Python.
-2. **⬇️📦 Instalação das Dependências**:
-   - `dnspython` — Para realizar consultas DNS.
-   - `fastapi` e `uvicorn` — Para API REST e servidor web.
+1. **Python 3.x**: This code was developed for Python 3.10+, so please install the latest version of Python.
+2. **⬇️📦 Installing dependencies**:
+   - `dnspython` — To perform DNS queries.
+   - `fastapi` and `uvicorn` — For REST API and web server.
   
    
-   Entre na pasta do projeto e execute:
+   Navigate to the project folder and run:
 
    `pip install -r requirements.txt`
 
 ---
-### 🧑‍💻 Contribuições
+### 🧑‍💻 Contributions
 
-Se você quiser contribuir com o projeto, fique à vontade para criar uma pull request! Sugestões de melhorias são sempre bem-vindas.
-
----
-### 🧯 Problemas Comuns
-
-❌ ModuleNotFoundError: dns
-
-Isso significa que a biblioteca dnspython não está instalada. Para corrigir, execute:
-
-`pip install dnspython`
-
-❌ Timeout em várias listas
-
-É normal que algumas listas negras tenham tempo de resposta alto ou até bloqueiem consultas. Isso pode ocorrer com listas populares como Spamhaus, por exemplo.
+  If you'd like to contribute to the project, feel free to create a pull request! Suggestions for improvements are always welcome.
 
 ---
-### 🎁 Melhorias Futuras
+### 🧯 Common Problems
 
- - Dockerização do projeto
+  ❌ ModuleNotFoundError: dns
+  
+  This means the dnspython library is not installed. To fix this, run:
+  
+  `pip install dnspython`
+  
+  ❌ Timeout on multiple lists
+  
+  Don't worry about it. That problem was resolved in the latest version; now the bot retries lists after a timeout.
 
- - Autenticação para API (para evitar abuso)
+---
+### 🎁 Future Improvements
 
- - Cache para resultados rápidos
+  - Dockerization of the project
+  
+  - API authentication (to prevent abuse)
+  
+  - Caching for fast results
+  
+  - Interactive dashboard with React or similar
+  
+  - Logs to track executions
+  
+  - .exe version for Windows
 
- - Dashboard interativo com React ou similar
+###🔑 License
 
- - Logs para rastrear execuções
-
- - Versão em .exe para Windows
-
-🔑 Licença
-
-Este projeto está licenciado sob a MIT License.
+This project is licensed under the MIT License.
